@@ -6,7 +6,9 @@ namespace CurrencyConvenor
     {
         static void Main(string[] args)
         {
-            float rub, usd, eur;
+            float rub;
+            float usd;
+            float eur;
             float usdToRub = 57.02f;
             float eurToRub = 59.64f;
             float eurToUsd = 1.035f;
@@ -56,7 +58,7 @@ namespace CurrencyConvenor
                         {
                             rub -= currencyCount;
                             currentOperation = currencyCount / usdToRub;
-                            usd += currencyCount / usdToRub;
+                            usd += currencyCount;
                             Console.WriteLine($"Преобретено : {currentOperation} долларов, остаток рублей : {rub} ");
                         }
                         else
