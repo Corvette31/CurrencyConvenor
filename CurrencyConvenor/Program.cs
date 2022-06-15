@@ -14,6 +14,7 @@ namespace CurrencyConvenor
             float eurToUsd = 1.035f;
             float currencyCount;
             float currentOperation;
+            int minimumCourse = 1;
             string userInput = "";
 
             Console.WriteLine("Добро пожаловать в обменный пункт, укажите количество вашей валюты :");
@@ -57,7 +58,7 @@ namespace CurrencyConvenor
                         if (rub >= currencyCount)
                         {
                             rub -= currencyCount;
-                            currentOperation = currencyCount / usdToRub;
+                            currentOperation = currencyCount * (minimumCourse / usdToRub);
                             usd += currencyCount;
                             Console.WriteLine($"Преобретено : {currentOperation} долларов, остаток рублей : {rub} ");
                         }
@@ -76,7 +77,7 @@ namespace CurrencyConvenor
                         if (rub >= currencyCount)
                         {
                             rub -= currencyCount;
-                            currentOperation = currencyCount / eurToRub;
+                            currentOperation = currencyCount * (minimumCourse / eurToRub);
                             eur += currentOperation;
                             Console.WriteLine($"Преобретено : {currentOperation} евро, остаток рублей : {rub} ");
                         }
@@ -114,7 +115,7 @@ namespace CurrencyConvenor
                         if (usd >= currencyCount)
                         {
                             usd -= currencyCount;
-                            currentOperation = currencyCount / eurToUsd;
+                            currentOperation = currencyCount * (minimumCourse / eurToUsd);
                             eur += currentOperation;
                             Console.WriteLine($"Преобретено : {currentOperation} евро, остаток долларов : {usd} ");
                         }
