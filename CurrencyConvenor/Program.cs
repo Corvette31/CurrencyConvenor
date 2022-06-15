@@ -150,7 +150,6 @@ namespace CurrencyConvenor
                         if (eur >= currencyCount)
                         {
                             eur -= currencyCount;
-
                             currentOperation = currencyCount * eurToUsd;
                             usd += currentOperation;
                             Console.WriteLine($"Преобретено : {currentOperation} долларов, остаток евро : {eur} ");
